@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.playground.mybatis.mapper.PersonMapper">
+    <resultMap id="personMap" type="Person">
+        <id column="id" property="id"/>
+        <result column="first_name" property="firstName"/>
+        <result column="last_name" property="lastName"/>
+        <result column="email" property="email"/>
+        <result column="created_by" property="createdBy"/>
+        <result column="created_on" property="createdOn"/>
+        <result column="updated_by" property="updatedBy"/>
+        <result column="updated_using" property="updatedUsing"/>
+        <result column="updated_on" property="updatedOn"/>
+    </resultMap>
+
+    <select id="findById" resultMap="personMap">
+        <![CDATA[
+        SELECT *
+        FROM person
+        WHERE id = #{id}
+        ]]>
+    </select>
+
+    <select id="findByEmail" resultMap="personMap">
+        <![CDATA[
+        SELECT *
+        FROM person
+        WHERE lower(email) = lower(#{email})
+        ]]>
+    </select>
+
+    <insert id="insert" parameterType="Person" useGeneratedKeys="true" keyProperty="id">
+        <![CDATA[
+        INSERT INTO person(first_name, last_name, email, created_by, updated_by, updated_using)
+        VALUES (#{firstName}, #{lastName}, #{email}, #{createdBy}, #{updatedBy}, #{updatedUsing})
+        ]]>
+    </insert>
+
+    <update id="update" parameterType="Person">
+        <![CDATA[
+        UPDATE person
+        SET first_name    = #{firstName},
+            last_name     = #{lastName},
+            email         = #{email},
+            updated_by    = #{updatedBy},
+            updated_using = #{updatedUsing},
+            updated_on    = now()
+        WHERE id = #{id}
+        ]]>
+    </update>
+</mapper>
