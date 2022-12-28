@@ -5,9 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class PersonDtoTest {
+class PersonDtoTest {
     @Test
-    public void fromWithNonNullPerson() {
+    void fromWithNonNullPerson() {
         // given
         final Long id = 111111L;
         final String firstName = "First";
@@ -33,7 +33,7 @@ public class PersonDtoTest {
     }
 
     @Test
-    public void fromWithNullPerson() {
+    void fromWithNullPerson() {
         // given
         // n/a
 
@@ -46,7 +46,7 @@ public class PersonDtoTest {
     }
 
     @Test
-    public void toPersonWithNonNullPersonDto() {
+    void toPersonWithNonNullPersonDto() {
         // given
         final Long id = 111111L;
         final String firstName = "First";
@@ -72,7 +72,7 @@ public class PersonDtoTest {
     }
 
     @Test
-    public void toPersonWithNullPersonDto() {
+    void toPersonWithNullPersonDto() {
         // given
         // n/a
 

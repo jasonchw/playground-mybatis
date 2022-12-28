@@ -14,7 +14,7 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.*;
 import static org.mockito.MockitoAnnotations.openMocks;
 
-public class PersonServiceTest {
+class PersonServiceTest {
     private PersonService personService;
 
     @Mock
@@ -27,7 +27,7 @@ public class PersonServiceTest {
     }
 
     @Test
-    public void findById() {
+    void findById() {
         // given
         final Person person = Person.builder().build();
 
@@ -45,7 +45,7 @@ public class PersonServiceTest {
     }
 
     @Test
-    public void findByEmail() {
+    void findByEmail() {
         // given
         final Person person = Person.builder().build();
 
@@ -63,7 +63,7 @@ public class PersonServiceTest {
     }
 
     @Test
-    public void insert() {
+    void insert() {
         // given
         final Long id = 111111L;
         final int count = 1;
@@ -89,7 +89,7 @@ public class PersonServiceTest {
     }
 
     @Test
-    public void update() {
+    void update() {
         // given
         final int count = 1;
         final Person person = Person.builder().build();

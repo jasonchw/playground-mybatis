@@ -12,14 +12,14 @@ import javax.sql.DataSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class PersonMapperTest extends BaseMapperTest {
+class PersonMapperTest extends BaseMapperTest {
     @Autowired
     private PersonMapper personMapper;
     @Autowired
     private DataSource dataSource;
 
     @Test
-    public void findById() {
+    void findById() {
         // given
         final String firstName = "First";
         final String lastName = "Last";
@@ -35,7 +35,7 @@ public class PersonMapperTest extends BaseMapperTest {
     }
 
     @Test
-    public void findByEmail() {
+    void findByEmail() {
         // given
         final String firstName = "First";
         final String lastName = "Last";
@@ -51,7 +51,7 @@ public class PersonMapperTest extends BaseMapperTest {
     }
 
     @Test
-    public void insert() {
+    void insert() {
         // given
         final String firstName = "First";
         final String lastName = "Last";
@@ -72,7 +72,7 @@ public class PersonMapperTest extends BaseMapperTest {
     }
 
     @Test
-    public void update() {
+    void update() {
         // given
         final String firstName = "First";
         final String lastName = "Last";
