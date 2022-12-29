@@ -1,6 +1,8 @@
 plugins {
     id 'org.springframework.boot' version '2.7.7'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+//    id 'org.springframework.boot' version '3.0.1'
+//    id 'io.spring.dependency-management' version '1.1.0'
     id 'java'
 }
 
@@ -19,12 +21,21 @@ repositories {
 }
 
 ext {
-    set('springCloudVersion', "2021.0.3")
+    set('springCloudVersion', "2021.0.5")
 }
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // spring boot 2 - tracing with sleuth - start
     implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+    // spring boot 2 - tracing with sleuth - end
+
+    // spring boot 3 - tracing with micrometer - start
+//    implementation 'org.springframework.boot:spring-boot-starter-aop'
+//    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+//    implementation 'io.micrometer:micrometer-tracing-bridge-brave'
+    // spring boot 3 - tracing with micrometer - end
 
     implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.3.0'
 

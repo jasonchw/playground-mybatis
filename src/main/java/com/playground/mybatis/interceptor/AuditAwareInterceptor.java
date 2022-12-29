@@ -41,12 +41,12 @@ public class AuditAwareInterceptor implements Interceptor {
             AuditAwareModel model = (AuditAwareModel) args[1];
 
             if (StringUtils.contains(statementId, "insert")) {
-                model.setCreatedBy("test-user-c");
-                model.setUpdatedBy("test-user-c");
+                model.setCreatedBy("test-user-c"); // TODO set proper value
+                model.setUpdatedBy("test-user-c"); // TODO set proper value
                 model.setUpdatedUsing("test-system-c");
             } else if (StringUtils.contains(statementId, "update")) {
-                model.setUpdatedBy("test-user-u");
-                model.setUpdatedUsing("test-system-u");
+                model.setUpdatedBy("test-user-u"); // TODO set proper value
+                model.setUpdatedUsing("test-system-u"); // TODO set proper value
             }
         }
     }

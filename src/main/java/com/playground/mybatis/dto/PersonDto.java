@@ -3,6 +3,7 @@ package com.playground.mybatis.dto;
 import com.playground.mybatis.model.Person;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.lang.Nullable;
 
 @Data
 @Builder
@@ -12,7 +13,7 @@ public class PersonDto {
     private String lastName;
     private String email;
 
-    public static PersonDto from(Person person) {
+    public static @Nullable PersonDto from(@Nullable Person person) {
         return person == null ? null : PersonDto.builder()
                 .id(person.getId())
                 .firstName(person.getFirstName())
@@ -21,7 +22,7 @@ public class PersonDto {
                 .build();
     }
 
-    public static Person toPerson(PersonDto dto) {
+    public static @Nullable Person toPerson(@Nullable PersonDto dto) {
         return dto == null ? null : Person.builder()
                 .id(dto.id)
                 .firstName(dto.firstName)
